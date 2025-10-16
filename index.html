@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio - Designer & Developer</title>
+    <title>David Solomon - Professional Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -30,7 +30,6 @@
             line-height: 1.6;
         }
 
-        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -68,7 +67,6 @@
             100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -142,7 +140,6 @@
             transition: all 0.3s;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -326,7 +323,6 @@
             }
         }
 
-        /* About Section */
         .about {
             padding: 100px 5%;
             max-width: 1200px;
@@ -356,7 +352,8 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: center;
+            align-items: start;
+            margin-bottom: 60px;
         }
 
         .about-text {
@@ -369,6 +366,56 @@
             color: var(--text);
             font-size: 28px;
             margin-bottom: 20px;
+        }
+
+        .skills-section {
+            margin-top: 40px;
+        }
+
+        .skills-section h3 {
+            color: var(--text);
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .skill-item {
+            margin-bottom: 25px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .skill-name {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .skill-percentage {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(0, 217, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 10px;
+            width: 0;
+            transition: width 1.5s ease;
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
         }
 
         .stats {
@@ -406,7 +453,6 @@
             color: var(--text-secondary);
         }
 
-        /* Services */
         .services {
             padding: 100px 5%;
             background: var(--secondary);
@@ -471,7 +517,6 @@
             line-height: 1.8;
         }
 
-        /* Portfolio */
         .portfolio {
             padding: 100px 5%;
         }
@@ -573,7 +618,6 @@
             font-size: 14px;
         }
 
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -662,7 +706,6 @@
             font-size: 14px;
         }
 
-        /* Contact */
         .contact {
             padding: 100px 5%;
             background: var(--secondary);
@@ -762,7 +805,6 @@
             min-height: 150px;
         }
 
-        /* Footer */
         footer {
             background: var(--primary);
             padding: 40px 5%;
@@ -802,7 +844,6 @@
             color: var(--text-secondary);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
@@ -875,6 +916,10 @@
             .btn {
                 text-align: center;
             }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -890,16 +935,11 @@
                 font-size: 28px;
             }
 
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
             .modal-content {
                 padding: 30px 20px;
             }
         }
 
-        /* Scroll Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -913,7 +953,6 @@
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
     <div class="bg-animation">
         <span></span>
         <span></span>
@@ -926,7 +965,6 @@
         <span></span>
     </div>
 
-    <!-- Navigation -->
     <nav>
         <div class="logo">Portfolio</div>
         <ul class="nav-links">
@@ -943,7 +981,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
@@ -961,7 +998,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="/frontend/images/Snapchat-1506910838.jpg" alt="Profile" class="profile-img">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop" alt="Profile" class="profile-img">
                 <div class="floating-card">
                     <i class="fas fa-code"></i>
                     <h4>Clean Code</h4>
@@ -976,7 +1013,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about fade-in" id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
@@ -985,31 +1021,92 @@
                 <p>With over 5 years of experience in the digital industry, I specialize in creating stunning visual designs and robust web applications. My approach combines creativity with technical excellence to deliver solutions that not only look amazing but also perform flawlessly.</p>
                 <p>I believe in the power of design to transform businesses and create meaningful connections with users. Every project is an opportunity to push boundaries and create something extraordinary.</p>
             </div>
-            <div class="stats">
-                <div class="stat-card">
-                    <h3>150+</h3>
-                    <p>Projects Completed</p>
+            <div class="skills-section">
+                <h3>Technical Skills</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">HTML5 & CSS3</span>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="95"></div>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h3>98%</h3>
-                    <p>Client Satisfaction</p>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="90"></div>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h3>5+</h3>
-                    <p>Years Experience</p>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">React & Vue.js</span>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="85"></div>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h3>50+</h3>
-                    <p>Happy Clients</p>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Node.js & Python</span>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="80"></div>
+                    </div>
                 </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">UI/UX Design</span>
+                        <span class="skill-percentage">92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="92"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Figma & Adobe XD</span>
+                        <span class="skill-percentage">88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="88"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stats">
+            <div class="stat-card">
+                <h3>150+</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-card">
+                <h3>98%</h3>
+                <p>Client Satisfaction</p>
+            </div>
+            <div class="stat-card">
+                <h3>5+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-card">
+                <h3>50+</h3>
+                <p>Happy Clients</p>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services fade-in" id="services">
         <h2 class="section-title">Services</h2>
         <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Development</h3>
+                <p>Creating responsive, modern websites that engage users and drive conversions with cutting-edge design principles.</p>
+            </div>
             <div class="service-card">
                 <i class="fas fa-paint-brush"></i>
                 <h3>Graphic Design</h3>
@@ -1038,7 +1135,6 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
     <section class="portfolio fade-in" id="portfolio">
         <h2 class="section-title">My Work</h2>
         <div class="portfolio-filters">
@@ -1050,7 +1146,7 @@
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-item" data-category="web">
-                <img src="/frontend/images/tapify.png" alt="Project 1">
+                <img src="images/tapify.png" alt="Project 1">
                 <div class="portfolio-overlay">
                     <h3>Web 3 Gaming Platform</h3>
                     <p>Modern online Gaming experience</p>
@@ -1082,7 +1178,7 @@
                 </div>
             </div>
             <div class="portfolio-item" data-category="web">
-                <img src="/frontend/images/nexus.png" alt="Project 5">
+                <img src="images/nexus.png" alt="Project 5">
                 <div class="portfolio-overlay">
                     <h3>Trading Website</h3>
                     <p>Professional business presence</p>
@@ -1100,7 +1196,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact fade-in" id="contact">
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-content">
@@ -1125,46 +1220,44 @@
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Abia state</h4>
+                            <h4>Location</h4>
                             <p>Aba, Nigeria</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <form class="contact-form">
+            <form class="contact-form" action="https://formsubmit.co/f0225f60fb6a2ba39ec5e21e19e68800" method="POST">
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" name="Name" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" placeholder="your.email@example.com" required>
+                    <input type="email" name="Email" placeholder="your.email@example.com" required>
                 </div>
                 <div class="form-group">
                     <label>Subject</label>
-                    <input type="text" placeholder="Project Inquiry" required>
+                    <input type="text" name="Project" placeholder="Project Inquiry" required>
                 </div>
                 <div class="form-group">
                     <label>Message</label>
-                    <textarea placeholder="Tell me about your project..." required></textarea>
+                    <textarea name="Message" placeholder="Tell me about your project..." required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/ogbchiemena"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/pro-dev001"><i class="fab fa-github"></i></a>
-            <a href="https://twitter.com/solowise11223"><i class="fab fa-twitter"></i></a>
-            <a href="https://wa.me/2348113307388"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/ogbchiemena" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/pro-dev001" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/solowise11223" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/2348113307388" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p>&copy; 2025 solowise. All rights reserved.</p>
+        <p>&copy; 2025 Solowise. All rights reserved.</p>
     </footer>
 
-    <!-- Modal -->
     <div class="modal" id="projectModal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal()">&times;</span>
@@ -1177,13 +1270,12 @@
     </div>
 
     <script>
-        // Portfolio Data
         const projects = [
             {
                 title: "Web 3 Gaming Platform",
-                image: "/frontend/images/tapify.png",
+                image: "images/tapify.png",
                 description: "A fully functional Web 3 gaming platform built with modern web technologies. Features include product catalog, shopping cart, secure checkout, user authentication, and admin dashboard. The design focuses on user experience with smooth animations and intuitive navigation.",
-                tags: ["python", "Node.js", "Postgresql", "Stripe"],
+                tags: ["Python", "Node.js", "PostgreSQL", "Stripe"],
                 link: "https://pro-dev001.github.io/Tapify/"
             },
             {
@@ -1209,9 +1301,9 @@
             },
             {
                 title: "Trading Website",
-                image: "/frontend/images/nexus.png",
+                image: "images/nexus.png",
                 description: "Professional Trading website for a technology consulting firm. The design conveys trust, expertise, and innovation. Includes service pages, case studies, team profiles, blog, and contact forms. Optimized for SEO and fast loading times.",
-                tags: ["node.js", "postgresql", "canvas", "Responsive"],
+                tags: ["Node.js", "PostgreSQL", "Canvas", "Responsive"],
                 link: "https://pro-dev001.github.io/Venus/"
             },
             {
@@ -1223,7 +1315,6 @@
             }
         ];
 
-        // Mobile Menu Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
 
@@ -1232,7 +1323,6 @@
             navLinks.classList.toggle('active');
         });
 
-        // Close menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
@@ -1240,7 +1330,6 @@
             });
         });
 
-        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1254,15 +1343,12 @@
             });
         });
 
-        // Portfolio Filtering
         const filterBtns = document.querySelectorAll('.filter-btn');
         const portfolioItems = document.querySelectorAll('.portfolio-item');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all buttons
                 filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
                 btn.classList.add('active');
 
                 const filter = btn.getAttribute('data-filter');
@@ -1285,7 +1371,6 @@
             });
         });
 
-        // Modal Functions
         function openModal(index) {
             const project = projects[index];
             const modal = document.getElementById('projectModal');
@@ -1293,7 +1378,15 @@
             document.getElementById('modalImage').src = project.image;
             document.getElementById('modalTitle').textContent = project.title;
             document.getElementById('modalDescription').textContent = project.description;
-            document.getElementById('modalLink').href = project.link;
+            
+            const linkBtn = document.getElementById('modalLink');
+            linkBtn.href = project.link;
+            linkBtn.onclick = function(e) {
+                if (project.link && project.link !== '#' && project.link !== 'https://example.com') {
+                    window.open(project.link, '_blank');
+                }
+                e.preventDefault();
+            };
             
             const tagsContainer = document.getElementById('modalTags');
             tagsContainer.innerHTML = '';
@@ -1314,14 +1407,12 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside
         document.getElementById('projectModal').addEventListener('click', (e) => {
             if (e.target.id === 'projectModal') {
                 closeModal();
             }
         });
 
-        // Scroll Animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -1339,7 +1430,6 @@
             observer.observe(el);
         });
 
-        // Navbar background on scroll
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
@@ -1351,14 +1441,12 @@
             }
         });
 
-        // Form Submission
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            e.target.reset();
-        });
+        // document.querySelector('.contact-form').addEventListener('submit', (e) => {
+        //     e.preventDefault();
+        //     alert('Thank you for your message! I will get back to you soon.');
+        //     e.target.reset();
+        // });
 
-        // Animate stats on scroll
         const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1386,5 +1474,26 @@
         if (statsSection) {
             statsObserver.observe(statsSection);
         }
+
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress');
+                    skillBars.forEach(bar => {
+                        const progress = bar.getAttribute('data-progress');
+                        setTimeout(() => {
+                            bar.style.width = progress + '%';
+                        }, 200);
+                    });
+                    skillsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const skillsSection = document.querySelector('.skills-section');
+        if (skillsSection) {
+            skillsObserver.observe(skillsSection);
+        }
     </script>
 </body>
+</html>
